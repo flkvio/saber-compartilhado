@@ -33,9 +33,9 @@
                                 </button>
                             </div>
                         </div>
-                        <% if (locals.imagem){ %>
-                            <img src="<%=post.imagem%>" alt="">
-                            <%} %>
+                            <% if (locals.postagens){%>
+                            <img class="post__image" src="<%=post.imagem%>" alt="x">
+                          <% } %>
                                 <p class="post__text">
                                     <%= post.texto %>
                                 </p>
