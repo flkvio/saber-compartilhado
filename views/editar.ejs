@@ -1,0 +1,43 @@
+<%- include("partials/header") %>
+    <%- include("partials/nav") %>
+    <% console.log(locals.postagens) %>
+        <main class="main__form">
+            <legend class="main__form-title">Editar</legend>
+            <form id="form-editar" class="main__form-form" action="" method="PUT">
+                <input id="hidden-id" type="hidden" value="<%=locals.postagens?postagens.id:""%>">
+                <label for="titulo"> Título *
+                    <input id="form-titulo" name="titulo" type="text" value="<%= locals.postagens?postagens.titulo:"none"%>" required>
+                </label>
+                    <fieldset>
+                        <legend>O que você deseja publicar?</legend>
+                        <label class="main__form-radio" for="form-artigo"> 
+                            <input id="form-artigo" value="artigo" name="tipo" type="radio" checked>
+                            <span>Artigo</span>
+                        </label>
+                        <label class="main__form-radio" for="form-pergunta"> 
+                            <input id="form-pergunta" value="pergunta" name="tipo" type="radio">
+                            <span>Pergunta</span>
+    
+                        </label>
+                    </fieldset>
+                </label>
+                <label for="autor"> Autor *
+                    <input id="form-autor" type="text" value="<%= locals.postagens?postagens.autor:"none" %>" required>
+                </label>
+                <label for="imagem"> URL da imagem
+                    <input id="form-imagem" name="imagem" type="text" value="<%= locals.postagens?postagens.imagem:"none" %>">
+                </label>
+                <label for="texto"> Conteúdo *
+                    <textarea name="texto" id="form-texto" required>
+                        <%=locals.postagens?postagens.texto:"none"%>
+                    </textarea>
+
+                </label>
+                <button id="editar-submit" type="submit">Publicar</button>
+
+            </form>
+        </main>
+
+
+
+        <%- include("partials/footer") %>
